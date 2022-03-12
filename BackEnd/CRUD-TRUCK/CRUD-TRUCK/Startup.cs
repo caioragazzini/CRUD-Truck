@@ -1,5 +1,7 @@
 using AutoMapper;
 using CRUD_TRUCK.Context;
+using CRUD_TRUCK.DTOs.Mappings;
+using CRUD_TRUCK.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,16 @@ namespace CRUD_TRUCK
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             String mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContextPool<AppDbContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace CRUD_TRUCK.Repository.TruckRepository
 {
-    public class TruckRepository :Repository<Truck> , ITruckRepository
+    public class TruckBll :Repository<Truck> , ITruckBll
     {
-        public TruckRepository(AppDbContext context) : base(context)
+        public TruckBll(AppDbContext context) : base(context)
         {
 
         }

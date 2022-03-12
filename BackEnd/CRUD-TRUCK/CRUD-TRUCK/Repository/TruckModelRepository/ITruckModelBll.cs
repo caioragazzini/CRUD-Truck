@@ -2,7 +2,7 @@
 
 namespace CRUD_TRUCK.Repository.TruckModelRepository
 {
-    public interface ITruckModelRepository :IRepository<TruckModel>
+    public interface ITruckModelBll :IRepository<TruckModel>
     {
     }
 }

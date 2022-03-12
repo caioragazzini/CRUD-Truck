@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace CRUD_TRUCK.Repository.TruckModelRepository
 {
-    public class TruckModelRepository :Repository<TruckModel>, ITruckModelRepository
+    public class TruckModelBll :Repository<TruckModel>, ITruckModelBll
     {
 
-        public TruckModelRepository(AppDbContext context) : base(context)
+        public TruckModelBll(AppDbContext context) : base(context)
         {
 
         }

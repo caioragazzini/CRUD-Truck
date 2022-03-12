@@ -5,8 +5,8 @@ namespace CRUD_TRUCK.Repository
 {
     public interface IUnitOfWork
     {
-        ITruckModelRepository TruckModelRepository { get; }
-        ITruckRepository TruckRepository  { get; }
+        ITruckModelBll TruckModelBll { get; }
+        ITruckBll TruckBll { get; }
         void Commit();
         void Dispose();
 
