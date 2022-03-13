@@ -15,6 +15,12 @@ namespace CRUD_TRUCK.Repository
 
         public AppDbContext _appDbContext;
 
+        public UnitOfWork(AppDbContext contexto)
+        {
+            _appDbContext = contexto;
+        }
+
+
         public ITruckModelBll TruckModelBll { get { return _truckModelBll = _truckModelBll ?? new TruckModelBll(_appDbContext); } }
 
         public ITruckBll TruckBll { get { return _truckBll = _truckBll ?? new TruckBll(_appDbContext); } }
